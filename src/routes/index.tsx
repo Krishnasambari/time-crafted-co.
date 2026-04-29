@@ -1,26 +1,30 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteHeader } from "@/components/SiteHeader";
+import { Hero } from "@/components/Hero";
+import { Collection } from "@/components/Collection";
+import { Heritage } from "@/components/Heritage";
+import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Chronoswiss — Haute Horology, Hand-Crafted in Lucerne" },
+      { name: "description", content: "Discover the Open Gear Flying Tourbillon Paraiba and other limited-edition Swiss luxury timepieces, hand-assembled by master watchmakers." },
+      { property: "og:title", content: "Chronoswiss — Haute Horology" },
+      { property: "og:description", content: "Independent Swiss luxury watches, hand-crafted since 1983." },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main className="relative">
+      <SiteHeader />
+      <Hero />
+      <Collection />
+      <Heritage />
+      <Footer />
+    </main>
+  );
 }
