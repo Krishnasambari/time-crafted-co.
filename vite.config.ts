@@ -1,17 +1,15 @@
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
- 
+import { defineConfig } from 'vite'
+
 export default defineConfig({
   build: {
-    outDir: "dist",
+    outDir: 'dist',
   },
- 
   server: {
     port: 8080,
     strictPort: true,
   },
- 
   preview: {
     port: 8080,
     strictPort: true,
   },
-});
+})
