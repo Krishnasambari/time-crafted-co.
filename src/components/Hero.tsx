@@ -1,4 +1,4 @@
-import heroWatch from "@/assets/hero-watch.png";
+import heroWatch from "@/assets/hero-watch.webp";
 import watchmaker from "@/assets/watchmaker.jpg";
 import { Play, ArrowRight } from "lucide-react";
 
@@ -48,7 +48,7 @@ export function Hero() {
             alt="Chronoswiss Open Gear Flying Tourbillon Paraiba luxury skeleton watch"
             width={1024}
             height={1024}
-            className="absolute inset-0 w-full h-full object-contain animate-float shadow-watch"
+            className="absolute inset-0 w-full h-full object-contain animate-watch-spin shadow-watch"
           />
 
           {/* Available tag */}
