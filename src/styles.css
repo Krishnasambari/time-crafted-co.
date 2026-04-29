@@ -150,12 +150,34 @@
 }
 
 @layer base {
-  * {
-    border-color: var(--color-border);
-  }
+  * { border-color: var(--color-border); }
 
   body {
-    background-color: var(--color-background);
+    background: var(--gradient-hero);
+    background-attachment: fixed;
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    min-height: 100vh;
   }
+
+  .font-display { font-family: var(--font-display); letter-spacing: -0.01em; }
+  .text-glow { color: var(--brand-glow); }
+  .bg-hero-gradient { background: var(--gradient-hero); }
+  .bg-radial-glow { background: var(--gradient-glow); }
+  .shadow-watch { filter: drop-shadow(0 40px 60px rgba(0,0,0,0.6)) drop-shadow(0 0 80px oklch(0.55 0.2 230 / 0.5)); }
+  .glass { background: oklch(1 0 0 / 0.04); backdrop-filter: blur(12px); border: 1px solid oklch(1 0 0 / 0.08); }
+  .text-balance { text-wrap: balance; }
+  .hairline { border-top: 1px solid oklch(1 0 0 / 0.1); }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-8deg); }
+    50% { transform: translateY(-18px) rotate(-6deg); }
+  }
+  .animate-float { animation: float 7s ease-in-out infinite; }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up { animation: fade-up 1.1s ease-out both; }
 }
